@@ -180,21 +180,11 @@ class BookCar extends React.Component {
 <View style={{borderBottomColor:'white',borderBottomWidth:0.6,width:'100%'}}/>
 
 <Item success style={{ borderBottomWidth:0,marginBottom:10,marginTop:20 ,width: "85%",marginLeft:'7.5%'}}>
-      <TouchableOpacity onPress={()=>this.openCalendar()} style={{flexDirection:'row',width:'100%' }}>
+      <TouchableOpacity onPress={()=>navigate('CalenderPages')} style={{flexDirection:'row',width:'100%' }}>
       <Image source={require('../../image/calendar-white.png')} style={{width:20,height:20,marginLeft:-10}}/>
       <Text style={{marginLeft:10,color:'white',fontSize:16}}> {new Date().toDateString()}</Text>
-      <Calendar
-        i18n="en"
-        ref={(calendar) => {this.calendar = calendar;}}
-        customI18n={customI18n}
-        color='white'
-        format="YYYYMMDD"
-        minDate="20170510"
-        maxDate="20180312"
-        startDate={this.state.startDate}
-        endDate={this.state.endDate}
-        onConfirm={this.confirmDate}
-      />
+  
+  
       </TouchableOpacity>
       </Item>
       <View style={{borderBottomColor:'white',marginTop:10,borderBottomWidth:0.6,width:'100%'}}/>

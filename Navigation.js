@@ -67,8 +67,29 @@ import SelectLT from './screens/MakeTour/Ltoption/SelectLT'
 import SelectYourTour from './screens/MakeTour/Ltoption/SelectYourTour'
 import TourDetail from './screens/MakeTour/Ltoption/TourDetail'
 
+// IMPORT MAKE TRIP
+import MakeTripOne from './screens/MakeTour/MakeTrip/MakeTripOne';
+import MakeTripTwo from './screens/MakeTour/MakeTrip/MakeTripTwo';
+import MakeTripThree from './screens/MakeTour/MakeTrip/MakeTripThree';
+import MTChangeCity from './screens/MakeTour/MakeTrip/MTChangeCity';
+import MTChangeHotel from './screens/MakeTour/MakeTrip/MTChangeHotel';
+
+// IMPORT PLANNED
+import FirstPage from './screens/MakeTour/Planned/FirstPage'
+import SelectPack from './screens/MakeTour/Planned/SelectPack'
+
+// IMPORT DIAMOND
+import ChangeHotelDi from './screens/MakeTour/Planned/Diamond/ChangeHotelDi'
+import NoofPeople from './screens/MakeTour/Planned/Diamond/NoofPeople'
+import SelectDiPack from './screens/MakeTour/Planned/Diamond/SelectDiPack'
+import SelectHotelsDi from './screens/MakeTour/Planned/Diamond/SelectHotelsDi'
+
 
 import StartPage from './screens/StartPage'
+
+// IMPORT CALENDAR 
+import CalenderPage from './screens/calenderPage'
+import CalenderPages from './screens/calenderPages'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -82,6 +103,7 @@ function HotelStack() {
   return (
       <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="BookHome" component={BookHome} />
+        <Stack.Screen name="CalenderPage" component={CalenderPage} />
         <Stack.Screen name="HotelSelection" component={HotelSelection} />
         <Stack.Screen name="HotelPage" component={HotelPage} />
         <Stack.Screen name="ChooseYourStay" component={ChooseYourStay} />
@@ -120,6 +142,7 @@ function CarStack() {
   return (
       <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="BookCar" component={BookCar} />
+        <Stack.Screen name="CalenderPages" component={CalenderPages} />
         <Stack.Screen name="SelectPlace" component={SelectPlace} />
         <Stack.Screen name="SelectCar" component={SelectCar} />
         <Stack.Screen name="CompanyPage" component={CompanyPage} />
@@ -137,12 +160,46 @@ function LocalTraStack() {
       </Stack.Navigator>
   );
 };
+function MakeTripStack() {
+  return (
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Screen name="MakeTripOne" component={MakeTripOne} />
+        <Stack.Screen name="MakeTripTwo" component={MakeTripTwo} />
+        <Stack.Screen name="MakeTripThree" component={MakeTripThree} />
+        <Stack.Screen name="MTChangeCity" component={MTChangeCity} />
+        <Stack.Screen name="MTChangeHotel" component={MTChangeHotel} />
+      </Stack.Navigator>
+  );
+};
+
+function DiamondStack() {
+  return (
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Screen name="SelectDiPack" component={SelectDiPack} />
+        <Stack.Screen name="ChangeHotelDi" component={ChangeHotelDi} />
+        <Stack.Screen name="NoofPeople" component={NoofPeople} />
+        <Stack.Screen name="SelectHotelsDi" component={SelectHotelsDi} />
+      </Stack.Navigator>
+  );
+};
+
+function PlannedStack() {
+  return (
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Screen name="SelectPack" component={SelectPack} />
+        <Stack.Screen name="FirstPage" component={FirstPage} />
+        <Stack.Screen name="DiamondStack" component={DiamondStack} />
+      </Stack.Navigator>
+  );
+};
 
 function makeTourStack() {
   return (
       <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="MakeTourOption" component={MakeTourOption} />
+        <Stack.Screen name="MakeTripStack" component={MakeTripStack} />
         <Stack.Screen name="LocalTraStack" component={LocalTraStack} />
+        <Stack.Screen name="PlannedStack" component={PlannedStack} />
       </Stack.Navigator>
   );
 };

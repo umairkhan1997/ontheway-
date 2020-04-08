@@ -222,7 +222,9 @@ class BookBus extends React.Component {
             color:'white'
           },
           dateInput: {
-            marginLeft: 36
+            marginLeft: 36,
+            // color:'white',
+            backgroundColor:'white'
           }
           // ... You can check the source to find the other keys.
         }}

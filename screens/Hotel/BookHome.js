@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput
 import { Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input,} from 'native-base';
 import BookDrawer from '../BookDrawer'
 import ImageSlider from 'react-native-image-slider';
-import Calendar from 'react-native-calendar-select';
+// import Calendar from 'react-native-calendar-select';
 
 class BookHome extends React.Component {
     static navigationOptions={
@@ -28,67 +28,14 @@ class BookHome extends React.Component {
     countR:1,
     check:0
         }
-        this.confirmDate = this.confirmDate.bind(this);
-        this.openCalendar = this.openCalendar.bind(this);
-        
-        this.backPressSubscriptions = new Set();
-        this.items = [{
-          id: 'Karachi',
-          name: 'Karachi',
-        }, {
-          id: 'Lahore',
-          name: 'Lahore',
-        }, {
-          id: 'Islamabad',
-          name: 'Islamabad',
-        }, {
-          id: 'Peshawar',
-          name: 'Peshawar',
-        }, {
-          id: 'Hyderabad',
-          name: 'Hyderabad',
-        }, {
-          id: 'Kashmir',
-          name: 'Kashmir',
-        }, {
-          id: 'Malum Jabba',
-          name: 'Malum Jabba',
-        }, {
-          id: 'Quetta',
-          name: 'Quetta',
-        }, {
-          id: 'Meena Bazar',
-          name: 'Meena Bazar',
-        }];
-    } 
-    
-    onSelectedItemsChange = selectedItems => {
-      this.setState({ selectedItems });
-    };
-   
-    onValueChange(value) {
-        this.setState({
-          selected: value
-        });
-      }
-      openDrawer = () => {
+    }
+       openDrawer = () => {
         this.drawer._root.open();
       };
       closeDrawer = () => {
         this.drawer._root.close();
       };
-      confirmDate({startDate, endDate, startMoment, endMoment}) {
-        this.setState({
-          startDate,
-          endDate
-        });
-      }
-      openCalendar() {
-        this.calendar && this.calendar.open();
-      }
-      toggleModal = () => {
-        this.setState({ isModalVisible: !this.state.isModalVisible });
-      };
+     
       _incrementCount = () => {
         this.setState(prevState => ({ count: prevState.count + 1 }));
       };
@@ -140,50 +87,8 @@ class BookHome extends React.Component {
         'https://q-cf.bstatic.com/images/hotel/max1280x900/159/159317855.jpg',
         'https://q-cf.bstatic.com/images/hotel/max1280x900/157/157069424.jpg',
       ];
-      let customI18n = {
-        'w': ['', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
-        'weekday': ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        'text': {
-          'start': 'Check in',
-          'end': 'Check out',
-          'date': 'Date',
-          'save': 'Confirm',
-          'clear': 'Reset'
-        },
-        'date': 'DD / MM'  // date format
-      };
-      // optional property, too.
-      let color = {
-        subColor: '#f0f0f0'
-      };
-      // const items = [{
-      //   id: '92iijs7yta',
-      //   name: 'Ondo',
-      // }, {
-      //   id: 'a0s0a8ssbsd',
-      //   name: 'Ogun',
-      // }, {
-      //   id: '16hbajsabsd',
-      //   name: 'Calabar',
-      // }, {
-      //   id: 'nahs75a5sg',
-      //   name: 'Lagos',
-      // }, {
-      //   id: '667atsas',
-      //   name: 'Maiduguri',
-      // }, {
-      //   id: 'hsyasajs',
-      //   name: 'Anambra',
-      // }, {
-      //   id: 'djsjudksjd',
-      //   name: 'Benue',
-      // }, {
-      //   id: 'sdhyaysdj',
-      //   name: 'Kaduna',
-      // }, {
-      //   id: 'suudydjsjd',
-      //   name: 'Abuja',
-      // }];
+      
+      
     const {navigate}=this.props.navigation;
     console.log(selectedItems,'hotel selected')
     console.log(this.state.startDate,this.state.endDate,'date selected')
@@ -273,46 +178,6 @@ marginLeft:10}}>Name Your Destinations , So we can help you to find your Beautif
 {/* PLACES NAME  */}
 {/* <View style={{borderWidth:1,borderColor:'black',width:'98%',height:160,marginTop:10,marginLeft:'1%'}}> */}
  <View style={{width:'98%',marginTop:10,marginLeft:'1%'}}>
- {/* <View style={{ height:100,marginTop:20 }}>
-         <MultiSelect
-           hideTags
-           items={this.items}
-           uniqueKey="id"
-           ref={(component) => { this.multiSelect = component }}
-           onSelectedItemsChange={this.onSelectedItemsChange}
-           selectedItems={selectedItems}
-           selectText="Search your Favourite Place here"
-           searchInputPlaceholderText="Search Items..."
-           onChangeInput={ (text)=> console.log(text)}
-         //  altFontFamily="ProximaNova-Light"
-           tagRemoveIconColor="#CCC"
-           tagBorderColor="#CCC"
-           tagTextColor="#CCC"
-           selectedItemTextColor="#CCC"
-           selectedItemIconColor="#CCC"
-           itemTextColor="#000"
-           displayKey="name"
-           searchInputStyle={{ color: '#CCC' }}
-           submitButtonColor="#CCC"
-           submitButtonText="Submit"
-         />
-        
-        <View style={{flexDirection:'row',flexWrap:'wrap'}}>
-           {
-             this.state.selectedItems &&
-             this.state.selectedItems.map(data =>{
-               console.log(data,)
-return(
-
-<View style={{width:'32%'}}>
-    <Text style={{fontSize:16,fontWeight:'500',color:'gray',marginLeft:'1%'}}>{data}</Text>
-    
-</View>
-)
-             })
-           }
-       </View>
-       </View> */}
        <Item success style={{ width: "85%",marginLeft:'7.5%',marginBottom:10 }}>
        <Image source={require('../../image/searchs.png')} style={{width:20,height:20,marginLeft:-25}}/>
         <Input placeholder='City' 
@@ -324,21 +189,11 @@ return(
 
       <View style={{ marginBottom:10,marginTop:20 }}>
       <Item success style={{ marginBottom:10,marginTop:10 ,width: "85%",marginLeft:'7.5%'}}>
-      <TouchableOpacity onPress={()=>this.openCalendar()} style={{flexDirection:'row',width:'100%' }}>
+      <TouchableOpacity onPress={()=>navigate('CalenderPage')} style={{flexDirection:'row',width:'100%' }}>
       <Image source={require('../../image/calendar.png')} style={{width:20,height:20,marginLeft:-28}}/>
       <Text style={{marginLeft:10}}> {new Date().toDateString()}</Text>
-      <Calendar
-        i18n="en"
-        ref={(calendar) => {this.calendar = calendar;}}
-        customI18n={customI18n}
-        color={color}
-        format="YYYYMMDD"
-        minDate="20190312"
-        maxDate="22000312"
-        startDate={this.state.startDate}
-        endDate={this.state.endDate}
-        onConfirm={this.confirmDate}
-      />
+   
+
       </TouchableOpacity>
       </Item>
 
@@ -568,23 +423,6 @@ return(
  <Button onPress={()=>navigate('HotelSelection')} style={{backgroundColor:'#9cdcfe',width:'96%',marginLeft:'2%',height:50,marginTop:5,justifyContent:'center'}}>
    <Text style={{color:'white',fontWeight:'500',fontSize:16}}>Next Step</Text>
  </Button>
-
- {/* <View>
-      <Button title="Open Calendar" onPress={()=>this.openCalendar()} style={{width:'96%',marginLeft:'2%',height:50,}}>
-      <Calendar
-        i18n="en"
-        ref={(calendar) => {this.calendar = calendar;}}
-        customI18n={customI18n}
-        color={color}
-        format="YYYYMMDD"
-        minDate="20170510"
-        maxDate="20180312"
-        startDate={this.state.startDate}
-        endDate={this.state.endDate}
-        onConfirm={this.confirmDate}
-      />
-      </Button>
-    </View> */}
 </View>
 </View>
 

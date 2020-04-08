@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput
 import { Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button} from 'native-base';
 
 
-class MakeTourOption extends React.Component {
+class SelectPack extends React.Component {
     static navigationOptions={
         header:null,
     } 
@@ -21,15 +21,15 @@ class MakeTourOption extends React.Component {
             <Text style={{textAlign:'center',color:'#DA1A4D',fontSize:14,fontWeight:'500',}}>Local Travellers</Text>
     </Button> */}
     <Button 
-    onPress={()=>navigate('LocalTraStack')}
+    onPress={()=>navigate('')}
     style={{justifyContent:'center',marginLeft:'10%',borderColor:'white',borderWidth:0.9,marginBottom:15,width:'80%',
  backgroundColor:'#DA1A4D',borderRadius:20}}>
-            <Text style={{textAlign:'center',fontSize:16,fontWeight:'500',color:'white'}}>Local Travellers</Text>
+            <Text style={{textAlign:'center',fontSize:16,fontWeight:'500',color:'white'}}>Plantinum Package</Text>
     </Button>
     <Button 
-      onPress={()=>navigate('MakeTripStack')}
+      onPress={()=>navigate('DiamondStack')}
     style={{justifyContent:'center',marginLeft:'10%',borderColor:'white',borderWidth:0.3,marginBottom:15,backgroundColor:'white',width:'80%',borderRadius:20}}>
-            <Text style={{textAlign:'center',color:'#DA1A4D',fontSize:16,fontWeight:'500',}}>Make Trip</Text>
+            <Text style={{textAlign:'center',color:'#DA1A4D',fontSize:16,fontWeight:'500',}}>Diamond Package</Text>
     </Button>
     {/* <Button 
     onPress={()=>navigate('BookHome')}
@@ -38,10 +38,10 @@ class MakeTourOption extends React.Component {
             <Text style={{textAlign:'center',fontSize:14,fontWeight:'500',color:'white'}}>Make Trip</Text>
     </Button> */}
     <Button 
-    onPress={()=>navigate('PlannedStack')}
+    onPress={()=>navigate('FirstPage')}
     style={{justifyContent:'center',marginLeft:'10%',borderColor:'white',borderWidth:0.9,marginBottom:15,width:'80%',
  backgroundColor:'#DA1A4D',borderRadius:20}}>
-            <Text style={{textAlign:'center',fontSize:16,fontWeight:'500',color:'white'}}>Planned</Text>
+            <Text style={{textAlign:'center',fontSize:16,fontWeight:'500',color:'white'}}>Silver Package</Text>
     </Button>
     {/* <Button 
       onPress={()=>navigate('')}
@@ -57,7 +57,7 @@ class MakeTourOption extends React.Component {
   }
 }
 
-export default  MakeTourOption;
+export default  SelectPack;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
